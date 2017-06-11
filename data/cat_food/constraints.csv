@@ -1,0 +1,6 @@
+constraint_name,constraint_value,column_name,equality_relation
+PercentagesSum,100,-,==
+ProteinRequirement,8.0,Protein,>=
+FatRequirement,6.0,Fat,>=
+FibreRequirement,2.0,Fibre,<=
+SaltRequirement,0.4,Salt,<=

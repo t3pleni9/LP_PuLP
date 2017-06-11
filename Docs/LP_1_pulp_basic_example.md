@@ -1,4 +1,5 @@
-# Linear programming with Python:
+# Linear programming with Python: 
+Code example: basic_example_1.py
 ## Basic example: [Introductory guide on linear programming](https://www.analyticsvidhya.com/blog/2017/02/lintroductory-guide-on-linear-programming-explained-in-simple-english/)
 
 ## Problem statement: 
@@ -64,7 +65,7 @@
 
 `$> chocolate_factory = pulp.LpProblem("Chocolate Factory", pulp.LpMaximize)`
 
-[LpProblem](https://www.coin-or.org/PuLP/pulp.html#pulp.LpProblem)
+[LpProblem](https://www.coin-or.org/PuLP/pulp.html#pulp.LpProblem):
 
 		class pulp.LpProblem(name='NoName', sense=1)
 		This function creates a new LP Problem with the specified associated parameters
@@ -80,7 +81,7 @@
 `$> x = pulp.LpVariable('x', lowBound=0, cat='Integer')`  
 `$> y = pulp.LpVariable('y', lowBound=0, cat='Integer')`
 
-[LpVariable](https://www.coin-or.org/PuLP/pulp.html#pulp.LpVariable)
+[LpVariable](https://www.coin-or.org/PuLP/pulp.html#pulp.LpVariable):
 
 		class pulp.LpVariable(name, lowBound=None, upBound=None, cat='Continuous', e=None)
 
