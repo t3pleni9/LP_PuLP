@@ -104,6 +104,40 @@ The vector relationship is build using `pulp.lpSum` function. The hash map is us
 
 `$> pulp.lpSum([row[column_name] * ingredient_vars[row.Stuff] for index, row in data.iterrows()])`
 
+Finally the model looks as follows
+
+`$> cat_food_model`  
+    
+    The Cat food problem:
+    MINIMIZE
+    0.001*Ingr_Gel + 0.013*Ingr_Secret_Stuff_1 + 0.008*Ingr_Secret_Stuff_2 + 0.01*Ingr_Secret_Stuff_3 + 0.002*Ingr_Secret_Stuff_4 + 0.005*Ingr_Secret_Stuff_5 + 0.0
+    SUBJECT TO
+    PercentagesSum: Ingr_Gel + Ingr_Secret_Stuff_1 + Ingr_Secret_Stuff_2
+     + Ingr_Secret_Stuff_3 + Ingr_Secret_Stuff_4 + Ingr_Secret_Stuff_5 = 100
+    
+    ProteinRequirement: 0.1 Ingr_Secret_Stuff_1 + 0.2 Ingr_Secret_Stuff_2
+     + 0.15 Ingr_Secret_Stuff_3 + 0.04 Ingr_Secret_Stuff_5 >= 8
+    
+    FatRequirement: 0.08 Ingr_Secret_Stuff_1 + 0.1 Ingr_Secret_Stuff_2
+     + 0.11 Ingr_Secret_Stuff_3 + 0.01 Ingr_Secret_Stuff_4
+     + 0.01 Ingr_Secret_Stuff_5 >= 6
+    
+    FibreRequirement: 0.001 Ingr_Secret_Stuff_1 + 0.005 Ingr_Secret_Stuff_2
+     + 0.003 Ingr_Secret_Stuff_3 + 0.1 Ingr_Secret_Stuff_4
+     + 0.15 Ingr_Secret_Stuff_5 <= 2
+    
+    SaltRequirement: 0.002 Ingr_Secret_Stuff_1 + 0.005 Ingr_Secret_Stuff_2
+     + 0.007 Ingr_Secret_Stuff_3 + 0.002 Ingr_Secret_Stuff_4
+     + 0.008 Ingr_Secret_Stuff_5 <= 0.4
+    
+    VARIABLES
+    Ingr_Gel Continuous
+    Ingr_Secret_Stuff_1 Continuous
+    Ingr_Secret_Stuff_2 Continuous
+    Ingr_Secret_Stuff_3 Continuous
+    Ingr_Secret_Stuff_4 Continuous
+    Ingr_Secret_Stuff_5 Continuous
+
 ### Solution
 `$> cat_food_model.solve()`
 
