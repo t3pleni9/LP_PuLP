@@ -4,9 +4,9 @@ import operator as op
 
 
 class CatFoodProblem:
-  def __init__(self, data, constraints):
+  def __init__(self, data, data_constraints):
     self.data = data
-    self.constraints = constraints
+    self.constraints = data_constraints
 
     self.__equality_relations__ = {
       '==': op.eq,
@@ -33,8 +33,8 @@ class CatFoodProblem:
     solved = cat_food_model.solve()
 
     if solved == 1:
-      variables = [(variable.name, variable.varValue) for variable in cat_food_model.variables()]
-      return variables, pulp.value(cat_food_model.objective)
+      data_variables = [(variable.name, variable.varValue) for variable in cat_food_model.variables()]
+      return data_variables, pulp.value(cat_food_model.objective)
 
     raise 'Unable to solve'
 
