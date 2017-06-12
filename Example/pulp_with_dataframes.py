@@ -16,10 +16,9 @@ class CatFoodProblem:
       '>' : op.gt
     }
 
-  def optimize_for(self, variable_column_name):
+  def optimize(self):
     cat_food_model = pulp.LpProblem('The Cat food problem', pulp.LpMinimize)
-    variables = self.data[variable_column_name]
-    ingredient_vars = pulp.LpVariable.dicts('Ingr', variables, 0)
+    ingredient_vars = pulp.LpVariable.dicts('Ingr', self.data.Stuff, 0)
     cat_food_model += pulp.lpSum(
       [row.Cost * ingredient_vars[row.Stuff]
        for index, row in self.data.iterrows()
@@ -53,7 +52,7 @@ constraints = pd.read_csv('data/cat_food/constraints.csv', delimiter=',')
 
 cat_food_problem = CatFoodProblem(cat_food_data, constraints)
 
-variables, objective = cat_food_problem.optimize_for('Stuff')
+variables, objective = cat_food_problem.optimize()
 print variables
 print objective
 
