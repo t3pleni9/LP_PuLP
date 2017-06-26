@@ -8,7 +8,7 @@ def get_room_and_visit(variable_name):
   split_var = variable_name.split('_')
   return 'Room-' + split_var[1] + ', Visits: ' + split_var[2]
 
-target_visit = 11
+target_visit = 30
 total_visits_per_room = 11
 total_rooms = 4
 

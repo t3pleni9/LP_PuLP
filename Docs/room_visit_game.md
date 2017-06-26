@@ -22,7 +22,7 @@
 
 The above data is non linear in nature, but discrete.
 
-## Solution:
+## Modeling:
 The above problem is an example of discrete optimization as the Problem set and solution set are in the discrete space, ie. Only discrete number of inputs and corresponding outputs are available.
 
 #### Special Ordered Sets ([SOS](https://en.wikipedia.org/wiki/Special_ordered_set))
@@ -60,5 +60,17 @@ Subject to constraints:
 
 This problem has now been converted to a linear programming problem in `x`  
 The optimal visits per room would be obtained by looking at visits with `x_ij == 1` where `i` is the room number and `j` is the visit.
+
+## Solution:
+
+Refer [Example/room_visit.py](https://github.com/t3pleni9/LP_PuLP/blob/master/Example/room_visit.py) for the code implementation.
+
+The Linear programing solution is as follows for 30 visits: 
+
+    Room-1, Visits: 10
+    Room-2, Visits: 9
+    Room-3, Visits: 7
+    Room-4, Visits: 4
+    Objective: 3.744
 
     
