@@ -3,7 +3,7 @@
 ## Problem Statement:
 ### The Life Potion Rooms
     There are 4 rooms which contain Life potions. 
-    The life potion obtained at each visit in each roo is governed by the formula:
+    The life potion obtained at each visit in each room is governed by the formula:
 `f_i(v) = log(v*(0.42/i) + 1)` where `i` is the room number, and `v` is the visit.
  
     Each room can be visited a maximum of 10 times. 
