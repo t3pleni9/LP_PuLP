@@ -43,7 +43,6 @@ target_visit_constraint = flatten(
    for i in range(total_rooms)]
 )
 
-# Subtracting the zero visits
 room_visit += pulp.lpSum(target_visit_constraint) <= target_visit, 'Target visit constraint'
 
 solved = room_visit.solve()
