@@ -1,7 +1,7 @@
 # Solving Discrete Space problems with PuLP
 
 ## Problem Statement:
-### The Life Portion Rooms
+### The Life Potion Rooms
     There are 4 rooms which contain Life portions. 
     The life portion obtained at each visit in each roo is governed by the formula:
 `f_i(v) = log(v*(0.42/i) + 1)` where `i` is the room number, and `v` is the visit.
@@ -38,8 +38,8 @@ Other sources: [LPSolve](http://lpsolve.sourceforge.net/5.5/SOS.htm)
 
 In pure mathematical way the problem can be modeled as follows: 
 
-`LifePortion(v) = Sum(f_i(v_i))`  
-`Maximize LifePortion(v)`  
+`LifePotion(v) = Sum(f_i(v_i))`  
+`Maximize LifePotion(v)`  
 Where `v_i` is the total visit made to room `i` and `f_i(v) = log(v*(0.42/i) + 1)`  
 Subject to constraints:  
 `Sum(v_i) <= 30`  
@@ -47,8 +47,8 @@ Subject to constraints:
 `i -> R, 1 <= i <= 4`
   
 #### Converting the problem to SOS-1 problem.
-`LifePortion(v) = Sum(x_ij * f_i(v_ij))`
-`Maximize LifePortion(v)`
+`LifePotion(v) = Sum(x_ij * f_i(v_ij))`
+`Maximize LifePotion(v)`
 Where `v_ij` is the `j` visits made to room `i`  
 Subject to constraints: 
 `x_ij -> {0,1}`  
