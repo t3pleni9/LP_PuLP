@@ -43,7 +43,7 @@ In pure mathematical way the problem can be modeled as follows:
 Where `v_i` is the total visit made to room `i` and `f_i(v) = log(v*(0.42/i) + 1)`  
 Subject to constraints:  
 `Sum(v_i) <= 30`  
-`v -> R, 0 <= v <= 9`  
+`v -> R, 0 <= v <= 10`  
 `i -> R, 1 <= i <= 4`
   
 #### Converting the problem to SOS-1 problem.
@@ -54,8 +54,8 @@ Subject to constraints:
 `x_ij -> {0,1}`  
 `Sum(x_ij*v_ij) <= 30`  
 `Sum(x_i) = 1`  
-`v -> R, 0 <= v <= 9`  
-`j -> R, 0 <= v <= 9`  
+`v -> R, 0 <= v <= 10`  
+`j -> R, 0 <= v <= 10`  
 `i -> R, 1 <= i <= 4`
 
 This problem has now been converted to a linear programming problem in `x`  
