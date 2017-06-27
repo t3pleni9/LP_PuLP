@@ -14,7 +14,7 @@ total_rooms = 4
 
 room_visit = pulp.LpProblem('Room Visit', pulp.LpMaximize)
 
-life_portion_per_visit = [
+life_potion_per_visit = [
   [round(math.log(v * (0.42 / i) + 1), 3) for v in range(total_visits_per_room)]
   for i in range(1, 5)
   ]
@@ -27,11 +27,11 @@ sos_variables = [
 visits = [range(total_visits_per_room) for i in range(total_rooms)]
 
 objective = flatten(
-  [[sos_variables[i][j] * life_portion_per_visit[i][j] for j in range(total_visits_per_room)]
+  [[sos_variables[i][j] * life_potion_per_visit[i][j] for j in range(total_visits_per_room)]
    for i in range(total_rooms)]
 )
 
-room_visit += pulp.lpSum(objective), 'Revenue'
+room_visit += pulp.lpSum(objective), 'Life Potion'
 
 for i in range(total_rooms):
   room_visit += pulp.lpSum(
